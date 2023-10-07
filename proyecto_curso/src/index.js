@@ -1,17 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+//Creación de objetos, funciones y arreglos
+const persona = {
+  nombre: "Yadi",
+  caminar: function () {},
+  hablar() {},
+};
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+persona.hablar();
+persona['nombre'] = "Carolina";
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const nombreobjetivo = "nombre";
+persona[nombreobjetivo.value] = "Raquel";
