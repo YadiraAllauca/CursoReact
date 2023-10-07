@@ -38,8 +38,7 @@ log2("Hola2")
 mensajes[1](mensajes[0]);
 mensajes[3](mensajes[2]);
 
-dentroFn(mensaje => console.log(mensaje));*/
-
+dentroFn(mensaje => console.log(mensaje));
 const crearMayus = function (registro) {
   return function (mensaje) {
     registro(mensaje.toUpperCase()+"!!!");
@@ -50,3 +49,32 @@ const enfasis = crearMayus(mensaje => console.log(mensaje));
 
 enfasis("La vida es mejor con música")
 enfasis("Me siento bien ahora")
+*/
+const persona = {
+  nombre: "Yadi",
+  decirNombre: function () {
+    console.log(this.nombre);
+  },
+  cambiarNombre() {
+    this.nombre = "Carolina";
+  },
+};
+persona.decirNombre();
+persona.cambiarNombre();
+persona.decirNombre();
+
+const dentroFn = (ingreso) => {
+  ingreso("Envío de funciones");
+};
+
+dentroFn((mensaje) => console.log(mensaje));
+
+const crearMayus = (registro) => {
+  return function (mensaje) {
+    registro(mensaje.toUpperCase() + "!!!!");
+  };
+};
+
+const enfasis = crearMayus((mensaje) => console.log(mensaje));
+
+enfasis("Uso de funciones");
