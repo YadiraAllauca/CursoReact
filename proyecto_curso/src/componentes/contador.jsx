@@ -1,41 +1,46 @@
 import React, { Component } from "react";
-/*
-class Contador extends Component {
 
-  render() {
-    return(<h1>Hola!</h1>)
-  }
-}
-export default Contador
-import React from "react";
-
-function Contador() {
-
-    return (<h1>Hola!!</h1>);
-
-}
-export default Contador;*/
-
-class Contador extends Component {
+class Mensaje extends Component {
   state = {
-    count: 0
+    letras: 15,
+    contar: 0,
+    mensaje: "---Estoy programando en capacitateparaelempleo.org---",
+    show: "",
+  };
+
+  concatenar = () => {
+    var concat = "";
+    for (var i = 0; i < this.state.letras; i++) {
+      concat += this.state.mensaje[this.state.contar + i];
+    }
+    return concat;
   };
 
   manejadorIncremento = () => {
-    this.setState({count:this.state.count + 1})
-  }
+    this.setState({ show: this.concatenar() });
+    this.setState({ contar: this.state.contar + 1 });
+    if (
+      this.state.contar + this.state.letras ===
+      this.state.mensaje.length - 1
+    ) {
+      this.setState({ contar: 0 });
+    }
+  };
 
   formatoContar() {
-    const { count } = this.state;
-    return count === 0 ? "Cero" : count;
+    const { show } = this.state;
+    return show === "" ? "Iniciar" : show;
   }
 
   render() {
-    return (<div>
-      <span>{ this.formatoContar()}</span>
-      <button onClick={this.manejadorIncremento}
-      >Incremento</button>
-    </div>);
+    return (
+      <div>
+        <h1> DESCIFRA EL MENSAJE OCULTO !!!</h1>
+        <h1> {this.formatoContar()} </h1>
+        <button onClick={this.manejadorIncremento}> Avanzar </button>
+      </div>
+    );
   }
 }
-export default Contador;
+
+export default Mensaje;
