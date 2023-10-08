@@ -20,10 +20,21 @@ class Contador extends Component {
   state = {
     count: 0
   };
+
+  manejadorIncremento = () => {
+    this.setState({count:this.state.count + 1})
+  }
+
+  formatoContar() {
+    const { count } = this.state;
+    return count === 0 ? "Cero" : count;
+  }
+
   render() {
     return (<div>
-      <span>{ this.state.count}</span>
-      <button>Incremento</button>
+      <span>{ this.formatoContar()}</span>
+      <button onClick={this.manejadorIncremento}
+      >Incremento</button>
     </div>);
   }
 }
