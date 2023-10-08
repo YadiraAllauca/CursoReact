@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+/*import React, { Component } from "react";
 
 class Contador extends Component {
 
@@ -6,4 +6,10 @@ class Contador extends Component {
     return(<h1>Hola!</h1>)
   }
 }
-export default Contador
+export default Contador*/
+import React from "react";
+
+function Contador() {
+    return (<h1>Hola!!</h1>);
+}
+export default Contador;
