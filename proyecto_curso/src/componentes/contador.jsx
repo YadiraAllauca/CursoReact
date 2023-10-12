@@ -1,33 +1,17 @@
 import React, { Component } from "react";
-/*
-class Contador extends Component {
-
-  render() {
-    return(<h1>Hola!</h1>)
-  }
-}
-export default Contador
-import React from "react";
-
-function Contador() {
-
-    return (<h1>Hola!!</h1>);
-
-}
-export default Contador;*/
 
 class Contador extends Component {
   state = {
-    count: 0
+    value: this.props.value
   };
 
   manejadorIncremento = () => {
-    this.setState({count:this.state.count + 1})
+    this.setState({value: this.state.value + 1});
   }
 
   formatoContar() {
-    const { count } = this.state;
-    return count === 0 ? "Cero" : count;
+    const { value } = this.state;
+    return value === 0 ? "Cero" : value;
   }
 
   render() {
