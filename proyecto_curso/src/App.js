@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Contadores from './componentes/contadores';
+import Contador from './componentes/contadorhook';
 
 function App() {
   return (
     <div className="App">
-      <Contadores value={4} />
+      <Contador  />
     </div>
   );
 }
