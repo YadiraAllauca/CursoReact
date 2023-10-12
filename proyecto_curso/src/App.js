@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Contador from './componentes/contador';
+import Contadores from './componentes/contadores';
 
 function App() {
   return (
     <div className="App">
-      <Contador value={4} />
+      <Contadores value={4} />
     </div>
   );
 }
