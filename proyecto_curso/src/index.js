@@ -1,17 +1,32 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import Mensaje from "../src/components/contador";
+import Link from "next/link";
+import "bootstrap/dist/css/bootstrap.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function index() {
+  return (
+    <div>
+      <nav className="navbar navbar-light bg-light">
+        <Link href="/index">
+          <button className="mx-auto btn btn-outline-success" type="button">
+            Inicio
+          </button>
+        </Link>
+        <Link href="/About">
+          <button className="mx-auto btn btn-outline-secondary" type="button">
+            Acerca de
+          </button>
+        </Link>
+      </nav>
+      <div className="container">
+        <div className="row mt-5">
+          <div className="col-12 text-center">
+            <Mensaje letras={5} mensaje="Implementando componentes y ruteo" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+export default index;
